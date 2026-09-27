@@ -1,37 +1,94 @@
-# Image Steganography
+# 🔐 Image Steganography
 
-Hides secret text files inside BMP images using LSB (Least Significant Bit) technique in C.
+## 📌 Description
 
-## How it works
+Image Steganography is a **C-based application** that hides secret data inside an image file and later extracts the hidden data from the encoded image.
 
-Every pixel in a BMP image has 3 bytes (R, G, B).
-The program replaces the last bit of each byte with bits from the secret file.
-The change is too small for the human eye to notice any difference in the image.
+The project demonstrates how data can be embedded into image data while maintaining the visual appearance of the image.
 
-## Files
+## 🚀 Features
 
-| File | Description |
-|------|-------------|
-| test_encode.c | main file, handles encode/decode flow |
-| encode.c / encode.h | encoding logic |
-| decode.c / decode.h | decoding logic |
-| common.h | magic string definition |
-| types.h | common typedefs and enums |
+* Encode secret data into an image
+* Decode hidden data from an encoded image
+* Hide data inside BMP image files
+* Preserve the image structure while embedding data
+* Validate input files and encoding information
+* Extract the hidden data from the encoded image
 
-## Compile
+## 🛠️ Technologies Used
 
-make
+* **Language:** C
+* **Platform:** Linux
+* **Compiler:** GCC
+* **File Format:** BMP
+* **Concepts:** File Handling, Bit Manipulation, Binary Data Processing
 
-or manually:
+## 🧠 Concepts Demonstrated
 
-gcc test_encode.c encode.c decode.c -o stego
+* Pointers
+* Structures
+* File Handling
+* Binary File Operations
+* Bit Manipulation
+* Command Line Arguments
+* String Handling
+* Dynamic Memory
+* Modular Programming
 
-## Usage
+## 🔄 Working
 
-Encode a secret file into an image:
+### Encoding
 
-./stego -e secret.txt src.bmp output.bmp
+The encoding process takes:
 
-Decode and recover the hidden file:
+* Source image
+* Secret data
+* Secret file extension
 
-./stego -d stego.bmp
+The secret data is embedded into the source image to produce an encoded image.
+
+### Decoding
+
+The decoding process reads the encoded image and extracts the hidden information.
+
+## ⚙️ How to Compile
+
+```bash
+gcc *.c
+```
+
+## ▶️ How to Run
+
+### Encoding
+
+```bash
+./a.out -e source.bmp secret.txt output.bmp
+```
+
+### Decoding
+
+```bash
+./a.out -d output.bmp extracted.txt
+```
+
+> Use the exact command-line options supported by the project when running it.
+
+## 🔑 Magic String
+
+The project uses a **magic string** to identify and validate the encoded image during the decoding process.
+
+## 📚 What I Learned
+
+Through this project, I gained practical experience with:
+
+* Reading and writing binary files
+* Manipulating data at the bit level
+* Working with BMP image files
+* Passing command-line arguments
+* Implementing encoding and decoding logic
+* Handling file pointers and binary data
+* Organizing a C project into multiple modules
+
+## 🎯 Key Skills
+
+**C Programming • File Handling • Bit Manipulation • Binary Data • Pointers • Command Line Arguments • Encoding & Decoding**
